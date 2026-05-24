@@ -53,6 +53,8 @@ nav {
 .logo {
   font-size: 1.3rem;
   font-weight: 700;
+  text-decoration: none;
+  color: #111;
 }
 
 .nav-links {
@@ -398,6 +400,159 @@ footer {
   transform: translate(0,0);
 }
 
+/* Project Detail Page Styles */
+
+.project-detail-section {
+  padding: 80px 8%;
+}
+
+.project-detail-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.project-header-content {
+  margin-bottom: 60px;
+}
+
+.project-header-content h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin: 20px 0;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.project-intro {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #6e6e73;
+  margin-top: 20px;
+  max-width: 800px;
+}
+
+.project-detail-image {
+  margin-bottom: 100px;
+}
+
+.project-detail-image img {
+  width: 100%;
+  border-radius: 28px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  object-fit: cover;
+}
+
+.project-detail-content {
+  margin-bottom: 80px;
+}
+
+.detail-section {
+  margin-bottom: 80px;
+}
+
+.detail-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #111;
+}
+
+.detail-section p {
+  color: #6e6e73;
+  line-height: 1.85;
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+}
+
+.detail-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* Enhanced Project Features List */
+
+.project-features-detailed {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0;
+}
+
+.project-features-detailed li {
+  background: white;
+  padding: 24px;
+  margin-bottom: 16px;
+  border-radius: 16px;
+  border-left: 4px solid #0066ff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  transition: all 0.3s ease;
+}
+
+.project-features-detailed li:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transform: translateX(8px);
+}
+
+.project-features-detailed li strong {
+  color: #111;
+  font-size: 1.05rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.project-features-detailed li span {
+  color: #6e6e73;
+  line-height: 1.7;
+  font-size: 0.98rem;
+  display: block;
+}
+
+/* Skills Applied Section */
+
+.skills-applied {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.skills-applied span {
+  background: white;
+  border: 1px solid rgba(0,0,0,0.08);
+  color: #111;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.skills-applied span:hover {
+  background: #111;
+  color: white;
+  border-color: #111;
+}
+
+/* Back Link */
+
+.back-link {
+  margin-top: 100px;
+  padding-top: 60px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.back-link a {
+  display: inline-block;
+  color: #0066ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 12px 20px;
+  border-radius: 8px;
+}
+
+.back-link a:hover {
+  background: rgba(0,102,255,0.1);
+  transform: translateX(-6px);
+}
+
 @media(max-width: 1000px) {
 
   .hero-content,
@@ -411,6 +566,40 @@ footer {
 
   .reverse {
     direction: ltr;
+  }
+
+  .project-detail-section {
+    padding: 60px 8%;
+  }
+
+  .detail-section {
+    margin-bottom: 60px;
+  }
+
+  .project-features-detailed li {
+    padding: 20px;
+    margin-bottom: 12px;
+  }
+
+}
+
+@media(max-width: 640px) {
+
+  .project-header-content h1 {
+    font-size: 2rem;
+  }
+
+  .detail-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .skills-applied {
+    gap: 8px;
+  }
+
+  .skills-applied span {
+    padding: 10px 16px;
+    font-size: 0.9rem;
   }
 
 }
