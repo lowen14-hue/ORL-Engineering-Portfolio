@@ -97,11 +97,16 @@ nav {
   opacity: 0.8;
 }
 
+.hero-text {
+  text-align: center;
+}
+
 .hero-text h2 {
-  font-size: clamp(3.8rem, 7vw, 5.8rem);
-  line-height: 1.05;
-  margin: 24px 0;
+  font-size: clamp(3.2rem, 6.5vw, 5.2rem);
+  line-height: 1.1;
+  margin: 24px auto;
   font-weight: 500;
+  max-width: 1000px;
 }
 
 .hero-text p {
