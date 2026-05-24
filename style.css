@@ -691,8 +691,8 @@ footer {
 }
 
 .logo-fit {
-  width: 70%;
-  max-width: 220px;
+  width: 50%;
+  max-width: 200px;
   height: auto;
   object-fit: contain;
 }
