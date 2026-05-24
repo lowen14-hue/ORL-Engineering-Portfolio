@@ -105,8 +105,16 @@ nav {
   color: #6e6e73;
 }
 
-.hero-button {
-    margin-top: 35px;   /* space above buttons */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 60px;
+}
+
+.hero-buttons .btn {
+  padding: 20px 48px;
+  font-size: 1.3rem;
 }
 
 .btn {
@@ -693,9 +701,4 @@ footer {
   max-width: 140px;
   object-fit: contain;
   display: block;
-}
-
-  .hero-content {
-    align-items: flex-start; /* stops vertical centering */
-    padding-top: 120px;      /* pushes content down */
 }
