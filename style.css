@@ -694,3 +694,8 @@ footer {
   object-fit: contain;
   display: block;
 }
+
+  .hero-content {
+    align-items: flex-start; /* stops vertical centering */
+    padding-top: 120px;      /* pushes content down */
+}
