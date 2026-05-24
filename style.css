@@ -682,5 +682,17 @@ footer {
     height: 220px;
   }
 
+.featured-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+  padding: 20px;
 }
+
+.logo-fit {
+  width: 70%;
+  max-width: 220px;
+  height: auto;
+  object-fit: contain;
 }
