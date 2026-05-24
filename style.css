@@ -105,13 +105,19 @@ nav {
   color: #6e6e73;
 }
 
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 60px;
+}
+
 .btn {
   padding: 16px 24px;
   border-radius: 900px;
   text-decoration: none;
   font-weight: 600;
   transition: 0.35s ease;
-  margin-top: 0 auto;
 }
 
 .primary {
