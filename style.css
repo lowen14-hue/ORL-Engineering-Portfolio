@@ -98,10 +98,10 @@ nav {
 }
 
 .hero-text h2 {
-  font-size: clamp(5rem, 8vw, 8rem);
+  font-size: clamp(4.5rem, 8vw, 8rem);
   line-height: 1;
   margin: 40px 0;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .hero-text p {
@@ -697,13 +697,14 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 30px;
-  overflow: hidden; /* prevents edge touching */
+  overflow: hidden;
 }
 
 .featured-image img {
-  max-width: 120px;   /* controls logo size */
-  width: 100%;
-  height: auto;
+  width: 120px !important;
+  height: auto !important;
+  max-width: 120px !important;
+  max-height: 120px;
   object-fit: contain;
-}
+  display: block;
 }
