@@ -105,9 +105,10 @@ nav {
   color: #6e6e73;
 }
 
+
 .btn {
-  padding: 16px 30px;
-  border-radius: 999px;
+  padding: 16px 24px;
+  border-radius: 900px;
   text-decoration: none;
   font-weight: 600;
   transition: 0.35s ease;
