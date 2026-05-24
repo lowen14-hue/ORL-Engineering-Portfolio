@@ -108,13 +108,13 @@ nav {
 .hero-buttons {
   display: flex;
   justify-content: center;
-  gap: 18px;
-  margin-top: 40px;
+  gap: 14px;
+  margin-top: 32px;
 }
 
 .hero-buttons .btn {
-  padding: 12px 22px;
-  font-size: 1rem;
+  padding: 10px 18px;
+  font-size: 0.9rem;
 }
 
 .btn {
