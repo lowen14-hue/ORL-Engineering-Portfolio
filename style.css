@@ -105,6 +105,9 @@ nav {
   color: #6e6e73;
 }
 
+.hero-text .btn {
+    margin-top: 35px;   /* space above buttons */
+}
 
 .btn {
   padding: 16px 24px;
