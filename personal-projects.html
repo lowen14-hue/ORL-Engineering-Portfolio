@@ -3,41 +3,462 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Personal Projects | Owen Lotito</title>
+  <title>Drone Engineering Project | Owen Lotito</title>
+
   <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .drone-hero {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .drone-hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      color: #000000;
+    }
+
+    .drone-hero .project-tag {
+      display: inline-block;
+      background: #0066ff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+    }
+
+    .drone-hero p {
+      font-size: 1.2rem;
+      color: #6e6e73;
+      max-width: 700px;
+      margin: 20px auto;
+      line-height: 1.8;
+    }
+
+    .project-overview {
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 0 20px;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+
+    .overview-grid img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      object-fit: contain;
+      padding: 20px;
+      background: white;
+    }
+
+    .overview-content h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      color: #000000;
+    }
+
+    .overview-content p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #6e6e73;
+      margin-bottom: 18px;
+    }
+
+    .project-phases {
+      background: #f9f9f9;
+      padding: 40px;
+      border-radius: 12px;
+      margin: 60px 0;
+    }
+
+    .project-phases h3 {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      color: #000000;
+    }
+
+    .phases-list {
+      display: grid;
+      gap: 25px;
+    }
+
+    .phase-item {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      border-left: 4px solid #0066ff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .phase-item h4 {
+      font-size: 1.2rem;
+      color: #0066ff;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .phase-item p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #6e6e73;
+    }
+
+    .design-specs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin: 60px 0;
+    }
+
+    .spec-card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .spec-card h4 {
+      font-size: 1.1rem;
+      color: #000000;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .spec-card p {
+      font-size: 0.95rem;
+      color: #6e6e73;
+      line-height: 1.6;
+    }
+
+    .design-philosophy {
+      background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+      padding: 50px;
+      border-radius: 16px;
+      margin: 60px 0;
+      border-left: 5px solid #0066ff;
+    }
+
+    .design-philosophy h3 {
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      color: #000000;
+    }
+
+    .philosophy-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .philosophy-point {
+      padding: 20px 0;
+    }
+
+    .philosophy-point h4 {
+      color: #0066ff;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .philosophy-point p {
+      color: #6e6e73;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .tech-stack {
+      margin: 60px 0;
+    }
+
+    .tech-stack h3 {
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      color: #000000;
+    }
+
+    .hardware-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .hardware-item {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid rgba(0, 102, 255, 0.2);
+    }
+
+    .hardware-item strong {
+      color: #0066ff;
+      font-weight: 700;
+    }
+
+    .hardware-item p {
+      color: #6e6e73;
+      font-size: 0.95rem;
+      margin-top: 5px;
+    }
+
+    .next-steps {
+      background: #e8f2ff;
+      padding: 40px;
+      border-radius: 12px;
+      margin: 60px 0;
+      border-left: 4px solid #0066ff;
+    }
+
+    .next-steps h3 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      color: #0066ff;
+    }
+
+    .next-steps ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .next-steps li {
+      padding: 12px 0;
+      color: #6e6e73;
+      font-size: 1rem;
+      line-height: 1.7;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .next-steps li:before {
+      content: "→";
+      color: #0066ff;
+      font-weight: 700;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      .drone-hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .overview-grid,
+      .philosophy-list,
+      .hardware-list,
+      .design-specs {
+        grid-template-columns: 1fr;
+      }
+
+      .drone-hero {
+        padding: 60px 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<section class="projects-section">
+<div class="background-glow glow1"></div>
+<div class="background-glow glow2"></div>
 
-  <div class="section-title">
-    <span>Independent Development</span>
-    <h2>Personal Projects</h2>
+<header class="hero">
+  <nav>
+    <h1 class="logo">Owen Lotito</h1>
+    <div class="nav-links">
+      <a href="index.html#featured">Featured</a>
+      <a href="index.html#categories">Portfolio</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="drone-hero fade-up">
+    <div>
+      <span class="project-tag">🚁 Ongoing Engineering Project</span>
+      <h1>FPV Drone Design & Build</h1>
+      <p>Cost-efficient custom FPV drone with hardware integration, FAA compliance, and 3D printed carbon fiber frame</p>
+    </div>
+  </div>
+</header>
+
+<section class="project-overview">
+
+  <div class="overview-grid fade-left">
+    <div>
+      <img src="image/drone-pic-in-progress.png" alt="Drone Design In Progress"/>
+    </div>
+    <div class="overview-content">
+      <h2>Project Overview</h2>
+      <p>
+        Custom FPV drone engineering project focused on designing a lightweight, cost-efficient frame that integrates with commercially available motors and flight controllers.
+      </p>
+      <p>
+        The design process emphasizes hardware compatibility, regulatory compliance with FAA size and weight restrictions, and iterative prototyping through 3D printing to validate component alignment before final production in carbon fiber composite material.
+      </p>
+      <p>
+        Based on foundational concepts from Joshua Bardwell's FPV drone DIY platform, this project has been customized with integrated motor ESCs and an alternative video capture solution using a GoPro camera instead of traditional expensive FPV equipment.
+      </p>
+    </div>
   </div>
 
-  <div class="project-grid">
-
-    <div class="project-card">
-      <img src="image/drone-placeholder.jpg">
-      <div class="project-info">
-        <h3>Drone Engineering Project</h3>
+  <div class="project-phases fade-up">
+    <h3>Project Phases</h3>
+    <div class="phases-list">
+      <div class="phase-item">
+        <h4>✓ Phase 1: Frame Design & CAD (Completed)</h4>
         <p>
-          Ongoing drone redesign and prototyping project focused on lightweight
-          structures, modularity, and additive manufacturing.
+          Initial frame geometry designed in CAD, optimized for weight distribution, motor mounting, and flight controller placement. First round of designing complete with all component locations finalized.
+        </p>
+      </div>
+      <div class="phase-item">
+        <h4>→ Phase 2: Hardware Integration (Current)</h4>
+        <p>
+          Ordering motors with built-in ESCs and flight controller to validate bolt holes and standoffs. Ensuring all screw holes align properly with purchased hardware before any printing occurs.
+        </p>
+      </div>
+      <div class="phase-item">
+        <h4>→ Phase 3: Prototype Validation</h4>
+        <p>
+          3D printing frame prototype in standard filament to verify geometry and hardware alignment. Testing fit and function of all electrical components before moving to final carbon fiber production.
+        </p>
+      </div>
+      <div class="phase-item">
+        <h4>→ Phase 4: Design Iteration</h4>
+        <p>
+          Likely design adjustments after hardware delivery and testing. Fine-tuning based on actual component dimensions and performance requirements discovered during prototype assembly.
+        </p>
+      </div>
+      <div class="phase-item">
+        <h4>→ Phase 5: Carbon Fiber Frame Production</h4>
+        <p>
+          Once geometry is validated and proven correct for hardware compatibility, printing final frame in carbon fiber filament for weight reduction and structural rigidity.
+        </p>
+      </div>
+      <div class="phase-item">
+        <h4>→ Phase 6: Assembly & Testing</h4>
+        <p>
+          Final assembly of all components, flight controller configuration, and ground testing before first flight operations.
         </p>
       </div>
     </div>
-
   </div>
-  
-<div class="back-link">
-  <a class="btn secondary" href="index.html#categories">
-    ← Back to Portfolio
-  </a>
-</div>
-  
+
+  <div class="design-specs fade-up">
+    <div class="spec-card">
+      <h4>Weight Target</h4>
+      <p>Optimized for FAA regulations - keeping drone under critical weight thresholds for simplified regulatory compliance</p>
+    </div>
+    <div class="spec-card">
+      <h4>Frame Design</h4>
+      <p>Modular 3D printed structure with integrated motor mounting points and standardized fastener holes</p>
+    </div>
+    <div class="spec-card">
+      <h4>Component Integration</h4>
+      <p>Custom standoffs and bolt patterns designed around purchased motor and flight controller specifications</p>
+    </div>
+  </div>
+
+  <div class="design-philosophy fade-up">
+    <h3>Design Philosophy</h3>
+    <div class="philosophy-list">
+      <div class="philosophy-point">
+        <h4>Cost-Efficient Design</h4>
+        <p>Prioritizing affordable components while maintaining functional performance. Motors with integrated ESCs reduce component count and complexity.</p>
+      </div>
+      <div class="philosophy-point">
+        <h4>Hardware-First Approach</h4>
+        <p>Designing around purchased components ensures compatibility and eliminates costly redesigns after assembly.</p>
+      </div>
+      <div class="philosophy-point">
+        <h4>Iterative Prototyping</h4>
+        <p>3D printing prototypes to validate geometry before carbon fiber production, reducing waste and ensuring fit accuracy.</p>
+      </div>
+      <div class="philosophy-point">
+        <h4>Alternative Video Solution</h4>
+        <p>Using existing GoPro camera for video capture and live feed capability, eliminating the need for expensive dedicated FPV helmet systems.</p>
+      </div>
+      <div class="philosophy-point">
+        <h4>Regulatory Compliance</h4>
+        <p>Designing specifically for FAA weight and size regulations to minimize licensing complexity and operational restrictions.</p>
+      </div>
+      <div class="philosophy-point">
+        <h4>Customization & Adaptation</h4>
+        <p>Building upon proven FPV fundamentals while tailoring the design to personal needs and available resources.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tech-stack fade-up">
+    <h3>Hardware Integration Plan</h3>
+    <div class="hardware-list">
+      <div class="hardware-item">
+        <strong>Motors:</strong>
+        <p>Brushless motors with built-in ESCs for simplified wiring and reduced component integration complexity</p>
+      </div>
+      <div class="hardware-item">
+        <strong>Flight Controller:</strong>
+        <p>Commercially available flight controller with standard mounting holes and connection specs</p>
+      </div>
+      <div class="hardware-item">
+        <strong>Frame Material:</strong>
+        <p>Initial prototype in standard PLA/PETG, final version in carbon fiber filament for strength-to-weight optimization</p>
+      </div>
+      <div class="hardware-item">
+        <strong>Video System:</strong>
+        <p>GoPro camera for high-quality video recording and live feed capability via onboard transmission</p>
+      </div>
+      <div class="hardware-item">
+        <strong>Battery System:</strong>
+        <p>LiPo batteries sized for FAA compliance and optimized flight duration targets</p>
+      </div>
+      <div class="hardware-item">
+        <strong>Fasteners:</strong>
+        <p>Standard metric bolts and standoffs designed into frame with precise hole placement for hardware alignment</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="next-steps fade-up">
+    <h3>Next Steps & Timeline</h3>
+    <ul>
+      <li>Order motors with integrated ESCs and flight controller</li>
+      <li>Validate actual hardware dimensions against CAD specifications</li>
+      <li>Adjust frame bolt holes and standoff locations if needed</li>
+      <li>3D print prototype in standard filament for fit testing</li>
+      <li>Conduct hardware alignment verification and make design refinements</li>
+      <li>Finalize geometry based on prototype testing results</li>
+      <li>3D print final frame in carbon fiber filament</li>
+      <li>Complete assembly, configuration, and ground testing</li>
+      <li>Prepare for first flight operations with FAA compliance validation</li>
+    </ul>
+  </div>
+
 </section>
+
+<section style="text-align: center; padding: 60px 20px; max-width: 1200px; margin: 0 auto;">
+  <a href="index.html#categories" class="btn secondary">← Back to Portfolio</a>
+</section>
+
+<footer>
+  <p>© 2026 Owen Lotito</p>
+</footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
