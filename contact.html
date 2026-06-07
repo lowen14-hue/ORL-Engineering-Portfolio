@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Me | Owen Lotito</title>
+
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .contact-page-container {
+      max-width: 700px;
+      margin: 100px auto;
+      padding: 0 20px;
+    }
+
+    .contact-form-section {
+      background: white;
+      padding: 50px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .contact-form-section h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #111;
+    }
+
+    .contact-form-section p {
+      color: #6e6e73;
+      margin-bottom: 40px;
+      font-size: 1.05rem;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 600;
+      color: #111;
+      font-size: 1rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: #111;
+      background: #f9f9f9;
+      transition: all 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      background: white;
+      border-color: #0066ff;
+      box-shadow: 0 0 0 3px rgba(0,102,255,0.1);
+    }
+
+    .form-group textarea {
+      min-height: 180px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px 24px;
+      background: #111;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background: #333;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+
+    .success-message {
+      display: none;
+      background: #d4edda;
+      color: #155724;
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #c3e6cb;
+    }
+
+    .error-message {
+      display: none;
+      background: #f8d7da;
+      color: #721c24;
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #f5c6cb;
+    }
+
+    .back-to-portfolio {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .back-to-portfolio a {
+      color: #0066ff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .back-to-portfolio a:hover {
+      transform: translateX(-6px);
+    }
+
+    @media (max-width: 640px) {
+      .contact-form-section {
+        padding: 30px 20px;
+      }
+
+      .contact-form-section h1 {
+        font-size: 2rem;
+      }
+
+      .contact-page-container {
+        margin: 80px auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="background-glow glow1"></div>
+<div class="background-glow glow2"></div>
+
+<header class="hero">
+  <nav>
+    <h1 class="logo">Owen Lotito</h1>
+    <div class="nav-links">
+      <a href="index.html#featured">Featured</a>
+      <a href="index.html#categories">Portfolio</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<div class="contact-page-container">
+  <div class="contact-form-section">
+    <h1>Get In Touch</h1>
+    <p>Have a question or project in mind? Send me a message and I'll get back to you as soon as possible.</p>
+    
+    <div class="success-message" id="successMessage">
+      ✓ Message sent successfully! I'll get back to you soon.
+    </div>
+    
+    <div class="error-message" id="errorMessage">
+      ✗ There was an error sending your message. Please try again.
+    </div>
+
+    <form id="contactForm" name="contact" method="POST" data-netlify="true">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required placeholder="John Doe">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required placeholder="john@example.com">
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" required placeholder="Project Inquiry">
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required placeholder="Tell me about your project or question..."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+
+    <div class="back-to-portfolio">
+      <a href="index.html#contact">← Back to Portfolio</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Owen Lotito</p>
+</footer>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const form = this;
+    const formData = new FormData(form);
+    
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
+    })
+    .then(() => {
+      document.getElementById('successMessage').style.display = 'block';
+      form.reset();
+      setTimeout(() => {
+        document.getElementById('successMessage').style.display = 'none';
+      }, 5000);
+    })
+    .catch(error => {
+      document.getElementById('errorMessage').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('errorMessage').style.display = 'none';
+      }, 5000);
+    });
+  });
+</script>
+
+</body>
+</html>
