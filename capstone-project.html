@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hands-Free Resistance Welder | Owen Lotito</title>
+
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .capstone-hero {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .capstone-hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+    }
+
+    .capstone-hero .award-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+      color: #1a1a1a;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      box-shadow: 0 8px 24px rgba(255, 215, 0, 0.3);
+    }
+
+    .capstone-hero p {
+      font-size: 1.3rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    .project-overview {
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 0 20px;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+
+    .overview-grid img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    }
+
+    .overview-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+    }
+
+    .overview-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+
+    .impact-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin: 40px 0;
+      padding: 30px;
+      background: var(--card-bg);
+      border-radius: 12px;
+    }
+
+    .metric {
+      text-align: center;
+    }
+
+    .metric-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--accent-color);
+      margin-bottom: 10px;
+    }
+
+    .metric-label {
+      font-size: 1rem;
+      color: var(--text-secondary);
+    }
+
+    .key-improvements {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin: 50px 0;
+    }
+
+    .improvement-card {
+      padding: 30px;
+      background: var(--card-bg);
+      border-radius: 12px;
+      border-left: 4px solid var(--accent-color);
+    }
+
+    .improvement-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: var(--text-primary);
+    }
+
+    .improvement-card p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+
+    .team-section {
+      background: var(--card-bg);
+      padding: 60px 40px;
+      border-radius: 12px;
+      margin: 80px 0;
+      text-align: center;
+    }
+
+    .team-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      color: var(--text-primary);
+    }
+
+    .team-image {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .team-image img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .technical-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin: 80px 0;
+    }
+
+    .details-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .details-list li {
+      padding: 15px 0;
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+    }
+
+    .details-list li:before {
+      content: "✓";
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background: var(--accent-color);
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      margin-right: 15px;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 12px 24px;
+      background: var(--card-bg);
+      color: var(--accent-color);
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .back-link:hover {
+      background: var(--accent-color);
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .capstone-hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .overview-grid,
+      .key-improvements,
+      .technical-details {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .impact-metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .capstone-hero {
+        padding: 60px 20px;
+      }
+    }
+
+    /* Dark mode support */
+    :root {
+      --text-primary: #ffffff;
+      --text-secondary: #b4b4b4;
+      --accent-color: #00d4ff;
+      --card-bg: #1a1a1a;
+      --border-color: #333333;
+      --bg-primary: #0a0a0a;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --text-primary: #1a1a1a;
+        --text-secondary: #666666;
+        --accent-color: #0088cc;
+        --card-bg: #f5f5f5;
+        --border-color: #e0e0e0;
+        --bg-primary: #ffffff;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="background-glow glow1"></div>
+<div class="background-glow glow2"></div>
+
+<header class="hero">
+  <nav>
+    <h1 class="logo">Owen Lotito</h1>
+    <div class="nav-links">
+      <a href="index.html#featured">Featured</a>
+      <a href="index.html#categories">Portfolio</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="capstone-hero fade-up">
+    <div>
+      <div class="award-badge">🏆 First Place Award</div>
+      <h1>Hands-Free Resistance Welder</h1>
+      <p>Mechanical Engineering Senior Capstone | University of Connecticut</p>
+      <p style="font-size: 1.1rem; color: var(--text-secondary);">An automated manufacturing solution for Pursuit Aerospace</p>
+    </div>
+  </div>
+</header>
+
+<section class="project-overview">
+
+  <div class="overview-grid fade-left">
+    <div>
+      <img src="image/Welder-CAD-Photo.png" alt="Hands-Free Resistance Welder CAD Model"/>
+    </div>
+    <div class="overview-content">
+      <h2>Project Overview</h2>
+      <p>
+        We designed and advanced a hands-free resistance welding system for Pursuit Aerospace, a global manufacturer of complex aircraft engine components. The machine was developed to automate the insulation blanket welding process, replacing a labor-intensive manual method that required operators to perform an average of 420 repetitive welds per blanket.
+      </p>
+      <p>
+        Building on previous project work and leveraging all available CAD models and PLC programs, our team successfully completed the automatic welding functionality and optimized the system for production deployment.
+      </p>
+    </div>
+  </div>
+
+  <div class="impact-metrics fade-up">
+    <div class="metric">
+      <div class="metric-value">420</div>
+      <div class="metric-label">Automated Welds Per Blanket</div>
+    </div>
+    <div class="metric">
+      <div class="metric-value">↓ 67%</div>
+      <div class="metric-label">Reduction in Operator Strain</div>
+    </div>
+    <div class="metric">
+      <div class="metric-value">↑ Manufacturing Efficiency</div>
+      <div class="metric-label">Significant Productivity Gain</div>
+    </div>
+  </div>
+
+  <h2 style="font-size: 2rem; margin: 60px 0 40px; color: var(--text-primary);">Key Improvements Achieved</h2>
+
+  <div class="key-improvements fade-up">
+    <div class="improvement-card">
+      <h3>✓ Enhanced Ergonomics</h3>
+      <p>
+        Eliminated repetitive manual tacking that caused severe wrist strain. Operators now supervise the automated process instead of performing thousands of welds, dramatically reducing workplace injuries and fatigue.
+      </p>
+    </div>
+    <div class="improvement-card">
+      <h3>✓ Superior Quality Control</h3>
+      <p>
+        Automated welding dramatically reduces human error and non-conforming parts. The machine delivers consistent, high-quality welds with precision that exceeds manual methods.
+      </p>
+    </div>
+    <div class="improvement-card">
+      <h3>✓ Manufacturing Productivity</h3>
+      <p>
+        Significant improvements in production speed and throughput. The streamlined process eliminates manual intervention bottlenecks and reduces part handling time.
+      </p>
+    </div>
+    <div class="improvement-card">
+      <h3>✓ Process Optimization</h3>
+      <p>
+        Seamlessly integrated with Pursuit's Kaizen continuous improvement philosophy. The automated system aligns with their single-piece flow manufacturing approach for maximum efficiency.
+      </p>
+    </div>
+  </div>
+
+  <div class="team-section fade-up">
+    <h2>Our Team</h2>
+    <div class="team-image">
+      <img src="image/ME_team27_NEW-scaled.jpg" alt="Senior Design Team"/>
+    </div>
+  </div>
+
+  <div class="technical-details fade-up">
+    <div>
+      <h2 style="margin-bottom: 30px; color: var(--text-primary);">Technical Achievements</h2>
+      <ul class="details-list">
+        <li>Completed automatic welding system design and implementation</li>
+        <li>Advanced PLC programming for motor operation and control</li>
+        <li>Integrated electrical components for reliable operation</li>
+        <li>Optimized machine for production-scale manufacturing</li>
+        <li>Implemented within Pursuit's manufacturing workflow</li>
+        <li>Validated through production testing and iteration</li>
+      </ul>
+    </div>
+    <div>
+      <h2 style="margin-bottom: 30px; color: var(--text-primary);">About Pursuit Aerospace</h2>
+      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary);">
+        Pursuit Aerospace is a global manufacturing leader with 16 locations specializing in complex aircraft engine components. Their commitment to Kaizen continuous improvement philosophy drives innovation and operational excellence throughout their manufacturing processes.
+      </p>
+      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary); margin-top: 20px;">
+        This project exemplifies how engineering innovation can enhance both manufacturing efficiency and workplace safety while maintaining the highest quality standards.
+      </p>
+    </div>
+  </div>
+
+</section>
+
+<section style="text-align: center; padding: 60px 20px; max-width: 1200px; margin: 0 auto;">
+  <a href="index.html" class="back-link">← Back to Portfolio</a>
+</section>
+
+<footer>
+  <p>© 2026 Owen Lotito</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
