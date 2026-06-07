@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Design Portfolio | Owen Lotito</title>
   <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* Override for driver and longboard to show full image */
+    .project-card:nth-child(1) img,
+    .project-card:nth-child(3) img {
+      height: 400px !important;
+      object-fit: contain !important;
+      object-position: center !important;
+      padding: 30px !important;
+    }
+  </style>
 </head>
 
 <body>
@@ -19,7 +29,7 @@
   <div class="project-grid">
 
     <div class="project-card">
-      <img src="image/driver-2.png">
+      <img src="image/driver-2.png" alt="Golf Driver Concept">
       <div class="project-info">
         <h3>Golf Driver Concept</h3>
         <p>
@@ -30,7 +40,7 @@
     </div>
 
     <div class="project-card">
-      <img src="image/iron-set.png">
+      <img src="image/iron-set.png" alt="Golf Iron Set">
       <div class="project-info">
         <h3>Golf Iron Set</h3>
         <p>
@@ -40,7 +50,7 @@
     </div>
 
     <div class="project-card">
-      <img src="image/longboard.png">
+      <img src="image/longboard.png" alt="Longboard Design">
       <div class="project-info">
         <h3>Longboard Design</h3>
         <p>
@@ -50,7 +60,7 @@
     </div>
 
     <div class="project-card">
-      <img src="image/ipad-stand.png">
+      <img src="image/ipad-stand.png" alt="Custom iPad Stand">
       <div class="project-info">
         <h3>Custom iPad Stand</h3>
         <p>
@@ -60,7 +70,7 @@
     </div>
 
     <div class="project-card">
-      <img src="image/charcuterie-board.png">
+      <img src="image/charcuterie-board.png" alt="Charcuterie Board">
       <div class="project-info">
         <h3>Charcuterie Board</h3>
         <p>
