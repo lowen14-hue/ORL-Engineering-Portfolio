@@ -312,8 +312,22 @@ section {
 
 .project-card img {
   width: 100%;
-  height: 260px;
-  object-fit: cover;
+  height: 320px;
+  object-fit: contain;
+  padding: 20px;
+  background: white;
+  display: block;
+}
+
+/* Specific styling for driver and longboard to ensure full visibility */
+#driver-image {
+  object-fit: contain;
+  object-position: center;
+}
+
+#longboard-image {
+  object-fit: contain;
+  object-position: center;
 }
 
 .project-info {
@@ -648,8 +662,9 @@ footer {
 
 .project-card img {
   width: 100%;
-  height: 280px;
-  object-fit: cover;
+  height: 220px;
+  object-fit: contain;
+  padding: 15px;
   display: block;
 }
 
@@ -679,8 +694,11 @@ footer {
   }
 
   .project-card img {
-    height: 220px;
+    height: 180px;
+    padding: 12px;
   }
+
+}
 
 .pursuit-logo {
   width: 80px;
