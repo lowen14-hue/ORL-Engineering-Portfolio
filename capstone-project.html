@@ -76,13 +76,14 @@
     }
 
     .impact-metrics {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      margin: 40px 0;
-      padding: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin: 60px auto;
+      padding: 40px 30px;
       background: var(--card-bg);
       border-radius: 12px;
+      max-width: fit-content;
     }
 
     .metric {
@@ -219,7 +220,8 @@
       }
 
       .impact-metrics {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        gap: 30px;
       }
 
       .capstone-hero {
